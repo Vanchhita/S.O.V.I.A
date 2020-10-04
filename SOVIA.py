@@ -14,12 +14,15 @@ import json
 import subprocess
 
 engine=pyttsx3.init()
+voices=engine.getProperty('voices')
+engine.setProperty('voice',voices[1].id)
 
 # Funtion which makes the Assistant speak
 
 def speak(audio):
     engine.say(audio)
     engine.runAndWait()
+
 
 # Function to tell Time
 
@@ -49,7 +52,7 @@ def greeting():
         speak("Good Afternoon Sir")
     if hour>=16 and hour<=24:
         speak("Good Evening Sir")
-    speak("JARVIS at your service, How Can I help you")
+    speak("SOVIA at your service, How Can I help you")
 
 # Function to take commands form microphone
 
